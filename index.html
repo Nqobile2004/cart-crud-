@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Brand Name</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { font-family: 'Helvetica', sans-serif; }
+    
+    .hero {
+      height: 100vh;
+      background: url('leopard.jpg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    
+    /* Dark overlay so text is readable */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 2s ease-out;
+    }
+    
+    h1 { 
+      font-size: clamp(2.5rem, 8vw, 6rem); 
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    
+    p { 
+      font-size: clamp(1rem, 3vw, 1.5rem); 
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    
+    /* Subtle "breathe" animation since video didn't work */
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    
+    .hero {
+      animation: breathe 8s ease-in-out infinite;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>YOUR BRAND</h1>
+      <p>Luxury • Editorial • Johannesburg</p>
+    </div>
+  </section>
+</body>
+</html>
